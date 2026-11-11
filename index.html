@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>عيد ميلاد سعيد ١٨</title>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#2a1236;--bg2:#4a1d52;--rose:#ff6b9d;--gold:#ffd27a;--ivory:#fff3e6;--muted:#d9bfe0;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+html{overflow-x:hidden;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(120% 80% at 50% 0%,var(--bg2),var(--bg) 70%) fixed;color:var(--ivory);font-family:'Tajawal',system-ui,sans-serif;text-align:center;min-height:100dvh;overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+section{max-width:640px;margin:0 auto;padding:48px 20px}
+.hero{padding-top:64px}
+.num{font-family:'Aref Ruqaa',serif;font-weight:700;font-size:clamp(150px,42vw,260px);line-height:.9;margin:0;color:var(--gold);text-shadow:0 0 40px rgba(255,210,122,.35)}
+h1{font-family:'Aref Ruqaa',serif;font-size:clamp(30px,8vw,46px);margin:8px 0 6px;font-weight:700}
+.sub{color:var(--muted);font-size:18px;margin:0}
+.count{display:flex;gap:10px;justify-content:center;margin:28px 0 0;direction:ltr}
+.count div{background:rgba(255,255,255,.07);border:1px solid rgba(255,210,122,.3);border-radius:14px;padding:10px 14px;min-width:68px}
+.count b{display:block;font-size:28px;color:var(--gold)}
+.count span{font-size:13px;color:var(--muted)}
+h2{font-family:'Aref Ruqaa',serif;font-size:30px;margin:0 0 6px}
+.candles{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:26px auto 0;max-width:370px}
+.c{width:34px;height:84px;background:none;border:0;padding:0;cursor:pointer;position:relative;touch-action:manipulation}
+.c:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+.c i{position:absolute;bottom:0;left:8px;width:18px;height:54px;border-radius:4px;background:repeating-linear-gradient(135deg,var(--rose) 0 6px,#fff 6px 12px)}
+.c u{position:absolute;top:2px;left:11px;width:12px;height:22px;border-radius:50% 50% 50% 50%/65% 65% 35% 35%;background:radial-gradient(circle at 50% 70%,#fff,var(--gold) 55%,#ff8a3d);animation:fl .6s ease-in-out infinite alternate;transition:opacity .25s,transform .25s}
+.c.off u{opacity:0;transform:scale(.2);animation:none}
+@keyframes fl{from{transform:scale(1) rotate(-4deg)}to{transform:scale(1.12,1.2) rotate(4deg)}}
+.cake{height:54px;max-width:440px;margin:0 auto;border-radius:12px 12px 22px 22px;background:linear-gradient(var(--ivory) 0 30%,var(--rose) 30% 100%)}
+.hint{color:var(--muted);margin:18px 0 0;min-height:26px}
+#letter{display:none}
+#letter.show{display:block;animation:in .9s ease both}
+@keyframes in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.paper{background:var(--ivory);color:#3a1a3f;border-radius:18px;padding:30px 24px;text-align:right;line-height:2;font-size:19px;box-shadow:0 18px 50px rgba(0,0,0,.35)}
+.paper h2{color:#a02b63;text-align:center;margin-bottom:14px}
+.paper p{margin:0 0 12px}
+.sign{text-align:left;font-family:'Aref Ruqaa',serif;font-size:24px;color:#a02b63}
+.wishes{display:grid;gap:12px;margin-top:22px;text-align:right}
+.wishes div{background:rgba(255,255,255,.07);border-radius:14px;padding:14px 16px;border-inline-start:4px solid var(--gold)}
+canvas{position:fixed;inset:0;pointer-events:none;z-index:5}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:26px}
+.chip{border:0;border-radius:999px;padding:13px 20px;font:700 16px 'Tajawal',sans-serif;color:#2a1236;cursor:pointer;touch-action:manipulation}
+.chip:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wish{margin-top:18px;min-height:64px;font-size:20px;font-weight:500;color:var(--gold)}
+.pop{position:fixed;font-size:26px;pointer-events:none;z-index:9;animation:pop 1.2s ease-out forwards}
+@keyframes pop{to{transform:translateY(-140px) scale(1.4);opacity:0}}
+.msg{position:relative;margin-top:34px;background:rgba(255,255,255,.07);border:1px solid rgba(255,210,122,.3);border-radius:18px;padding:22px 18px;text-align:right}
+.msg h2{text-align:center;font-size:26px}
+.msg p{color:var(--muted);margin:0 0 12px;text-align:center}
+.msg textarea{width:100%;min-height:130px;border-radius:12px;border:1px solid rgba(255,210,122,.4);background:rgba(0,0,0,.25);color:var(--ivory);font:17px/1.8 'Tajawal',sans-serif;padding:12px;resize:vertical}
+.msg textarea:focus-visible{outline:2px solid var(--gold)}
+.msg button{display:block;margin:12px auto 0;border:0;border-radius:999px;padding:11px 28px;background:var(--gold);color:#2a1236;font:700 17px 'Tajawal',sans-serif;cursor:pointer}
+.msg button:disabled{opacity:.6}
+#st{text-align:center;margin-top:12px;min-height:26px;color:var(--gold)}
+.hp{position:absolute;top:0;right:0;width:1px;height:1px;opacity:0;pointer-events:none;overflow:hidden}
+.rain{position:fixed;top:-40px;font-size:28px;pointer-events:none;z-index:8;animation:rain linear forwards}
+@keyframes rain{to{transform:translateY(110vh) rotate(360deg)}}
+@media (max-width:480px){section{padding:36px 16px}.paper{font-size:18px;padding:26px 18px}.count div{min-width:60px;padding:8px 10px}.count b{font-size:24px}}
+@media (prefers-reduced-motion:reduce){.c u{animation:none}#letter.show{animation:none}}
+</style>
+</head>
+<body>
+<canvas id="cv"></canvas>
+<canvas id="fw"></canvas>
+<section class="hero">
+  <p class="sub">اليوم ١٨ نوفمبر</p>
+  <p class="num">١٨</p>
+  <h1>كل عام وأنتِ أجمل <span id="nm"></span></h1>
+  <p class="sub">بداية فصل جديد من حياتك</p>
+  <div class="count" id="count" aria-live="polite"></div>
+</section>
+
+<section>
+  <h2>اطفئي الشموع</h2>
+  <p class="sub">اضغطي على كل شمعة، وتمني أمنية</p>
+  <div class="candles" id="candles"></div>
+  <div class="cake"></div>
+  <p class="hint" id="hint">١٨ شمعة متبقية</p>
+</section>
+
+<section id="letter">
+  <div class="paper">
+    <h2>إلى الغالية <span class="nm2"></span></h2>
+    <p>ثمانية عشر عاماً، وكل سنة منها جعلتكِ أقوى وألطف وأجمل.</p>
+    <p>اليوم تبدئين مرحلة جديدة، أحلامك فيها أكبر، وخطواتك أثبت، وطريقك مفتوح لكل ما تتمنين.</p>
+    <p>أتمنى أن يملأ الله أيامك فرحاً، وأن تتحقق كل أمنية تمنيتِها الليلة عند الشموع.</p>
+    <p>آسف لم أتمكن من إحضار هدية مناسبة لكِ، لكن أتمنى أن يسعدكِ هذا الموقع 🎁</p>
+    <div class="sign">عيد ميلاد سعيد 🎂</div>
+  </div>
+  <p class="sub" style="margin-top:26px">اختاري أمنية</p>
+  <div class="chips" id="chips"></div>
+  <div class="wish" id="wish" aria-live="polite"></div>
+  <form class="msg" id="mf">
+    <h2>اكتبي لي رسالة 💌</h2>
+    
+    <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <textarea id="mt" name="message" required maxlength="2000" aria-label="رسالتك" placeholder="اكتبي هنا..."></textarea>
+    <button type="submit" id="sb">إرسال</button>
+    <div id="st" aria-live="polite"></div>
+  </form>
+</section>
+
+<script>
+// غيّري الاسم هنا
+var NAME = "نينا";
+document.getElementById('nm').textContent = NAME;
+document.querySelectorAll('.nm2').forEach(function(e){e.textContent = NAME;});
+
+// احتفال بعد انتهاء العد التنازلي: ألعاب نارية + مطر إيموجي
+var partied = false;
+function party(){
+  if(partied) return; partied = true;
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  var cv = document.getElementById('fw'), x = cv.getContext('2d');
+  cv.width = innerWidth; cv.height = innerHeight;
+  var cols = ['#ff6b9d','#ffd27a','#fff3e6','#b78cff','#6fe3c1'], ps = [], n = 0;
+  function burst(){
+    var cx = cv.width*(.15+Math.random()*.7), cy = cv.height*(.12+Math.random()*.4), c = cols[Math.random()*5|0];
+    for(var i=0;i<70;i++){ var a = Math.random()*6.283, s = 1+Math.random()*4; ps.push({x:cx,y:cy,vx:Math.cos(a)*s,vy:Math.sin(a)*s,l:70,c:c}); }
+  }
+  burst();
+  var bi = setInterval(function(){ burst(); if(++n>=9) clearInterval(bi); }, 600);
+  (function run(){
+    x.clearRect(0,0,cv.width,cv.height);
+    ps.forEach(function(p){ p.x+=p.vx; p.y+=p.vy; p.vy+=.04; p.vx*=.99; p.l--; x.globalAlpha = Math.max(p.l/70,0); x.fillStyle = p.c; x.beginPath(); x.arc(p.x,p.y,2.4,0,6.283); x.fill(); });
+    ps = ps.filter(function(p){ return p.l>0; });
+    if(n<9 || ps.length) requestAnimationFrame(run); else x.clearRect(0,0,cv.width,cv.height);
+  })();
+  var em = ['🎉','✨','🎇','🎊'];
+  for(var k=0;k<36;k++){
+    var r = document.createElement('div'); r.className = 'rain'; r.textContent = em[k%4];
+    r.style.left = Math.random()*95 + 'vw';
+    r.style.animationDuration = (4+Math.random()*4) + 's';
+    r.style.animationDelay = (Math.random()*5) + 's';
+    document.body.appendChild(r);
+    setTimeout(function(el){ el.remove(); }, 14000, r);
+  }
+}
+
+// العد التنازلي
+var target = new Date(2026, 10, 18, 0, 0, 0);
+var box = document.getElementById('count');
+function tick(){
+  var d = target - new Date();
+  if(d <= 0){ box.innerHTML = '<div><b>🎉</b><span>اليوم عيد ميلادك</span></div>'; party(); return; }
+  var days = Math.floor(d/864e5), h = Math.floor(d%864e5/36e5), m = Math.floor(d%36e5/6e4), s = Math.floor(d%6e4/1e3);
+  box.innerHTML = [[days,'يوم'],[h,'ساعة'],[m,'دقيقة'],[s,'ثانية']].map(function(x){return '<div><b>'+x[0]+'</b><span>'+x[1]+'</span></div>';}).join('');
+}
+tick(); setInterval(tick, 1000);
+
+// الشموع
+var wrap = document.getElementById('candles'), left = 18, hint = document.getElementById('hint');
+for(var i=0;i<18;i++){
+  var b = document.createElement('button');
+  b.className='c'; b.setAttribute('aria-label','شمعة '+(i+1));
+  b.innerHTML='<u></u><i></i>';
+  b.onclick=function(){
+    if(this.classList.contains('off')) return;
+    this.classList.add('off'); left--;
+    if(left>0){ hint.textContent = left+' شمعة متبقية'; }
+    else { hint.textContent = 'تحققت أمنيتك 💖'; reveal(); }
+  };
+  wrap.appendChild(b);
+}
+function reveal(){
+  var l = document.getElementById('letter'); l.classList.add('show');
+  setTimeout(function(){ l.scrollIntoView({behavior:'smooth'}); }, 300);
+  confetti();
+}
+
+// الأمنيات
+var wishes = [
+  ['🎈 سعادة','سنة مليئة بالضحك والأيام الحلوة'],
+  ['📚 نجاح','تحقيق كل ما تحلمين به في دراستك وحياتك'],
+  ['💖 حب','أشخاص طيبون يحبونك كما تستحقين'],
+  ['🌍 سفر','أن ترين العالم وتعيشي كل مغامرة تتمنينها'],
+  ['✨ نور','أن تبقي بهذا الجمال الذي فيكِ دائماً']
+];
+var chipBg = ['#ffd5d1','#ffe9ad','#c9eadf','#cfe0fb','#e3d3f9'];
+var chips = document.getElementById('chips'), wish = document.getElementById('wish');
+wishes.forEach(function(w,i){
+  var c = document.createElement('button'); c.className='chip'; c.textContent = w[0]; c.style.background = chipBg[i];
+  c.onclick = function(e){
+    wish.textContent = w[1];
+    var p = document.createElement('div'); p.className='pop'; p.textContent = w[0].split(' ')[0];
+    p.style.left = e.clientX + 'px'; p.style.top = e.clientY + 'px'; document.body.appendChild(p);
+    setTimeout(function(){ p.remove(); }, 1300);
+  };
+  chips.appendChild(c);
+});
+
+// إرسال الرسالة عبر Formspree (بدون أي بيانات عن المرسِلة)
+var FORM_ID = "xgaoyero"; // ضع هنا معرّف النموذج من Formspree
+var mf = document.getElementById('mf'), st = document.getElementById('st'), sb = document.getElementById('sb');
+mf.addEventListener('submit', function(e){
+  e.preventDefault();
+  var t = document.getElementById('mt').value.trim();
+  if(!t) return;
+  sb.disabled = true; st.textContent = 'جارٍ الإرسال...';
+  fetch('https://formspree.io/f/' + FORM_ID, {
+    method:'POST', headers:{'Accept':'application/json','Content-Type':'application/json'},
+    body: JSON.stringify({message:t, _subject:'رسالة مجهولة 💌', _gotcha:mf.elements._gotcha.value})
+  }).then(function(r){
+    if(!r.ok) throw new Error();
+    mf.reset(); st.textContent = 'وصلت رسالتك 💖 شكراً لكِ';
+  }).catch(function(){
+    sb.disabled = false; st.textContent = 'تعذّر الإرسال، حاولي مرة أخرى';
+  });
+});
+
+// قصاصات ملونة
+function confetti(){
+  var cv = document.getElementById('cv'), x = cv.getContext('2d');
+  cv.width = innerWidth; cv.height = innerHeight;
+  var cols = ['#ff6b9d','#ffd27a','#fff3e6','#b78cff','#6fe3c1'];
+  var p = []; for(var i=0;i<140;i++) p.push({x:Math.random()*cv.width,y:-20-Math.random()*cv.height*.6,r:4+Math.random()*5,v:2+Math.random()*3,s:Math.random()*2-1,c:cols[i%5],a:Math.random()*6});
+  var f = 0;
+  (function run(){
+    x.clearRect(0,0,cv.width,cv.height);
+    p.forEach(function(q){ q.y+=q.v; q.x+=q.s+Math.sin(q.a+=.05); x.fillStyle=q.c; x.fillRect(q.x,q.y,q.r,q.r*1.6); });
+    if(++f<320) requestAnimationFrame(run); else x.clearRect(0,0,cv.width,cv.height);
+  })();
+}
+</script>
+</body>
+</html>
